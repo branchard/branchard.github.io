@@ -1,0 +1,19 @@
+{
+  "name": "branchard.github.io",
+  "version": "0.1.0",
+  "description": "Branchard GitHub Page",
+  "main": "build/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/branchard/branchard.github.io.git"
+  },
+  "author": "branchard",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/branchard/branchard.github.io/issues"
+  },
+  "homepage": "https://github.com/branchard/branchard.github.io#readme"
+}
