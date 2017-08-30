@@ -1,6 +1,25 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+// TODO add sourcemap
+
+//make plugins list
+let pluginsList = [
+	new ExtractTextPlugin({
+		filename: 'style.css',
+	 })
+]
+
+if(process.argv.indexOf('-p') !== -1){
+	pluginsList.push(
+		new webpack.optimize.UglifyJsPlugin({
+	      output: {
+	        comments: false,
+	      },
+	    })
+	);
+}
+
 module.exports = {
   entry: {
 	  main: [
@@ -22,15 +41,5 @@ module.exports = {
 	  {test: /\.(css|scss)/, use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])}
     ],
   },
-  plugins: process.argv.indexOf('-p') === -1 ? [
-	  new ExtractTextPlugin({
-            filename: 'style.css',
-        })
-  ] : [
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false,
-      },
-    }),
-  ],
+  plugins: pluginsList
 };
