@@ -4,7 +4,7 @@
   "description": "Branchard GitHub Page",
   "main": "build/bundle.js",
   "scripts": {
-	"start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
+    "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
     "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +24,10 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1"
   },
