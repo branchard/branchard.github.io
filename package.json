@@ -4,6 +4,8 @@
   "description": "Branchard GitHub Page",
   "main": "build/bundle.js",
   "scripts": {
+	"start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
+    "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,20 @@
   "bugs": {
     "url": "https://github.com/branchard/branchard.github.io/issues"
   },
-  "homepage": "https://github.com/branchard/branchard.github.io#readme"
+  "homepage": "https://github.com/branchard/branchard.github.io#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.2.2"
+  }
 }
