@@ -7,13 +7,14 @@ module.exports = {
     publicPath: '/build/',
     filename: 'bundle.js',
   },
-
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      {test: /.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'},
     ],
   },
-
   plugins: process.argv.indexOf('-p') === -1 ? [] : [
     new webpack.optimize.UglifyJsPlugin({
       output: {
