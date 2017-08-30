@@ -1,6 +1,5 @@
 // SASS Entry point
-$blue: #27f;
 
-body {
-	background: $blue;
-}
+// Include Boostrap stylesheet
+@import "~bootstrap/scss/normalize";
+@import "~bootstrap/scss/bootstrap";
