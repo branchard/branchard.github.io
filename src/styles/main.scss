@@ -1,5 +1,19 @@
 // SASS Entry point
 
+// Import custom vars and mixins
+@import "variables.scss";
+
 // Include Boostrap stylesheet
 //@import "~bootstrap/scss/normalize";
 @import "~bootstrap/scss/bootstrap";
+
+// Include Fonts
+@import "fonts.scss";
+
+// Include Generic Rules
+@import "generic.scss";
+
+// Import components style
+@import "../ui/components/templates/MainTemplate/style";
+@import "../ui/components/pages/Home/style";
+@import "../ui/components/organisms/Header/style";

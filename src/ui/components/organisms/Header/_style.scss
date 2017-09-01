@@ -1,0 +1,70 @@
+#app-header {
+	display: table;
+	overflow: hidden;
+	width: inherit;
+	height: inherit;
+	margin: 0;
+	padding: 0;
+
+	color: $white-base;
+	background-color: $light-blue;
+	vertical-align: middle;
+
+	.particles {
+		position: absolute;
+		width: inherit;
+		height: inherit;
+
+		&>div {
+			width: inherit;
+			height: inherit;
+		}
+	}
+
+	.centered-container {
+		display: table-cell;
+		vertical-align: middle;
+
+		.inner {
+			width: 32rem;
+			margin: auto;
+			h1 {
+				position: relative;
+				width: 100%;
+				font-size: 2.4rem;
+				text-align: center;
+
+				hr {
+					opacity: .4;
+					border-color: $white-base;
+					border-width: 2px; // 1px
+				}
+
+				.cursor {
+					position: relative;
+					top: -0.5rem;
+					left: 0.3rem;
+
+					animation: blinker 1.5s ease-in-out infinite;
+				}
+			}
+		}
+	}
+	.next {
+		position: absolute;
+		bottom: 2.5%;
+		padding: 20px;
+
+		// horizontal align
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+
+		text-align: center;
+		opacity: .9;
+	}
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
