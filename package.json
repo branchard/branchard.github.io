@@ -24,8 +24,10 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
+    "import-glob-loader": "^1.1.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "webpack": "^3.5.5",
@@ -36,6 +38,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "reactstrap": "^4.8.0"
   }
 }
