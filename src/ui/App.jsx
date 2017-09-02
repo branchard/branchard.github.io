@@ -18,7 +18,16 @@ class App extends React.Component {
 
         return (
             <LayoutManager>
-				child
+				<center>Ce portfolio n'est pas encore terminer, il le sera très prochainement ...</center>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
             </LayoutManager>
         );
     }

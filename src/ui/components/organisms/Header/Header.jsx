@@ -19,7 +19,7 @@ const particlesParams = {
 		}
 	},
     "interactivity": {
-        "detect_on": "window",
+        "detect_on": "canvas",
         "events": {
             "onhover": {
                 "enable": true,
@@ -38,9 +38,36 @@ const particlesParams = {
     }
 }
 
+const textToType = "Développeur Full Stack";
+
 class Header extends Component {
 	constructor(props){
 		super(props);
+
+		this.state = {
+			typingEffect: ""
+		}
+
+		this.componentDidMount = this.componentDidMount.bind(this);
+	}
+
+	componentDidMount(){
+		let that = this;
+
+		// typing effect init
+		setTimeout(function() {
+			(function loop() {
+			    var rand = Math.round(Math.random() * (300 - 100)) + 100;
+			    setTimeout(function() {
+					that.setState({
+						typingEffect: that.state.typingEffect + textToType[that.state.typingEffect.length]
+					})
+					if(that.state.typingEffect.length < textToType.length){
+						loop();
+					}
+			    }, rand);
+			}());
+		}, 500);
 	}
 
 	render(){
@@ -54,7 +81,7 @@ class Header extends Component {
 						<h1>
 							<span>B. Branchard</span>
 							<hr/>
-							<span>Développeur Full Stack</span>
+							<span>{this.state.typingEffect === undefined ? "Développeur Full Stack" : this.state.typingEffect}</span>
 							<span className="cursor">_</span>
 						</h1>
 					</div>

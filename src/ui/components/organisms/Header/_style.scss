@@ -7,11 +7,19 @@
 	padding: 0;
 
 	color: $white-base;
+	text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+
 	background-color: $light-blue;
+	//background-color: #0f87c0; // Old browsers
+	@include filter-gradient($light-blue - #111, $light-blue, vertical); // IE6-9
+	@include background-image(linear-gradient(top, $light-blue - #111 0%,$light-blue 31%,$light-blue 100%));
+
 	vertical-align: middle;
 
+	//perspective: 2px;
+
 	.particles {
-		position: absolute;
+		position: absolute; // TODO parallax effect
 		width: inherit;
 		height: inherit;
 
@@ -35,9 +43,10 @@
 				text-align: center;
 
 				hr {
-					opacity: .4;
+					opacity: .7;
 					border-color: $white-base;
 					border-width: 2px; // 1px
+					box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
 				}
 
 				.cursor {
@@ -62,8 +71,14 @@
 
 		text-align: center;
 		opacity: .9;
+
+		i {
+			animation: bounce 2s infinite; // TODO bounce animation
+		}
 	}
 }
+
+// animations keyframe
 
 @keyframes blinker {
   50% { opacity: 0; }
