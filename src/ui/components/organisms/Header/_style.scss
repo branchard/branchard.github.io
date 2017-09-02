@@ -34,12 +34,12 @@
 		vertical-align: middle;
 
 		.inner {
-			width: 15rem;
+			width: 20rem;
 			margin: auto;
 			h1 {
 				position: relative;
-				width: 100%;
-				font-size: 2.2rem;
+				//width: 100%;
+				font-size: 2.4rem;
 				text-align: center;
 
 				hr {
@@ -52,7 +52,6 @@
 				span.spe {
 					&::after {
 						content: "_";
-						display: none;
 						position: relative;
 						top: -0.5rem;
 						left: 0.3rem;
@@ -63,16 +62,6 @@
 			}
 			@include media-breakpoint-up(sm) {
 				width: 32rem;
-
-				h1 {
-					font-size: 2.4rem;
-
-					span.spe {
-						&::after {
-							display: inline;
-						}
-					}
-				}
 			}
 		}
 	}
