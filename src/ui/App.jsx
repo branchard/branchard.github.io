@@ -18,7 +18,7 @@ class App extends React.Component {
 
         return (
             <LayoutManager>
-				<center>Ce portfolio n'est pas encore terminer, il le sera très prochainement ...</center>
+				<center>Ce portfolio n'est pas encore terminé, il le sera très prochainement ...</center>
 				<br/>
 				<br/>
 				<br/>
