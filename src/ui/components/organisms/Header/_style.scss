@@ -79,7 +79,7 @@
 		opacity: .9;
 
 		i {
-			animation: bounce 2s infinite; // TODO bounce animation
+			@include animation(bounce 2s infinite);
 		}
 	}
 }
@@ -88,4 +88,21 @@
 
 @keyframes blinker {
   50% { opacity: 0; }
+}
+@include keyframes(bounce) {
+	0%,
+	100%,
+	20%,
+	50%,
+	80% {
+		@include transform(translateY(0));
+	}
+
+	40% {
+		@include transform(translateY(-6px));
+	}
+
+	60% {
+		@include transform(translateY(-3px));
+	}
 }

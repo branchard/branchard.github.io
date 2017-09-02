@@ -56,6 +56,8 @@ class Header extends Component {
 					that.setState({
 						typingEffect: that.state.typingEffect + textToType[that.state.typingEffect.length]
 					})
+
+					// continue typing effect if textToType is not entirely print
 					if(that.state.typingEffect.length < textToType.length){
 						loop();
 					}

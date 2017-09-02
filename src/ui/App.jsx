@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import MainTemplate from "./components/templates/MainTemplate";
 import Header from "./components/organisms/Header";
+import Home from "./components/pages/Home";
 
 class App extends React.Component {
 
@@ -18,16 +19,7 @@ class App extends React.Component {
 
         return (
             <LayoutManager>
-				<center>Ce portfolio n'est pas encore terminé, il le sera très prochainement ...</center>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
+				<Home/>
             </LayoutManager>
         );
     }

@@ -1,7 +1,8 @@
 // SASS Entry point
 
 // Import compass mixins
-@import "~compass-mixins";
+@import "~compass-mixins/lib/compass";
+@import "~compass-mixins/lib/animate";
 
 // Import custom vars and mixins
 @import "variables.scss";
