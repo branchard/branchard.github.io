@@ -8,7 +8,7 @@ const particlesParams = {
 			"value": 50,
 			"density": {
 				"enable": true,
-				"value_area": 1420
+				"value_area": parseInt(2000000/window.innerWidth) // dynamic particles density depending of the window width
 			}
 		}
 	},
