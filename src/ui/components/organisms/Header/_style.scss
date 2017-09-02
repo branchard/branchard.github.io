@@ -34,12 +34,12 @@
 		vertical-align: middle;
 
 		.inner {
-			width: 32rem;
+			width: 15rem;
 			margin: auto;
 			h1 {
 				position: relative;
 				width: 100%;
-				font-size: 2.4rem;
+				font-size: 2.2rem;
 				text-align: center;
 
 				hr {
@@ -50,11 +50,23 @@
 				}
 
 				.cursor {
+					display: none;
 					position: relative;
 					top: -0.5rem;
 					left: 0.3rem;
 
 					animation: blinker 1.5s ease-in-out infinite;
+				}
+			}
+			@include media-breakpoint-up(sm) {
+				width: 32rem;
+
+				h1 {
+					font-size: 2.4rem;
+
+					.cursor {
+						display: inline;
+					}
 				}
 			}
 		}
