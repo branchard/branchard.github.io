@@ -1,9 +1,10 @@
 .main-template {
+	height: 100%;
 	.header-wrapper {
 		position: relative;
 		top: 0;
 		left: 0;
-		height: 100vh;
+		height: 100%;
 		width: 100%;
 		z-index: 1000;
 	}
