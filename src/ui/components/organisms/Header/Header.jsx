@@ -81,8 +81,9 @@ class Header extends Component {
 						<h1>
 							<span>B. Branchard</span>
 							<hr/>
-							<span>{this.state.typingEffect === undefined ? "Développeur Full Stack" : this.state.typingEffect}</span>
-							<span className="cursor">_</span>
+							<span className="spe">
+								{this.state.typingEffect === undefined ? "Développeur Full Stack" : this.state.typingEffect}
+							</span>
 						</h1>
 					</div>
 				</div>

@@ -49,13 +49,16 @@
 					box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
 				}
 
-				.cursor {
-					display: none;
-					position: relative;
-					top: -0.5rem;
-					left: 0.3rem;
+				span.spe {
+					&::after {
+						content: "_";
+						display: none;
+						position: relative;
+						top: -0.5rem;
+						left: 0.3rem;
 
-					animation: blinker 1.5s ease-in-out infinite;
+						animation: blinker 1.5s ease-in-out infinite;
+					}
 				}
 			}
 			@include media-breakpoint-up(sm) {
@@ -64,8 +67,10 @@
 				h1 {
 					font-size: 2.4rem;
 
-					.cursor {
-						display: inline;
+					span.spe {
+						&::after {
+							display: inline;
+						}
 					}
 				}
 			}
