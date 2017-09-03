@@ -41,6 +41,8 @@
 				//width: 100%;
 				font-size: 2.4rem;
 				text-align: center;
+				line-height: 1;
+				//text-transform: uppercase;
 
 				hr {
 					opacity: .7;
@@ -50,6 +52,17 @@
 				}
 
 				span.spe {
+					&::before {
+						content: "";
+						display: inline-block;
+						position: relative;
+						width: 100%;
+						height: 2px;
+						margin-bottom: .8rem;
+						background-color: $white-base;
+						//border-width: 2px; // 1px
+						box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+					}
 					&::after {
 						content: "_";
 						position: relative;
@@ -76,10 +89,11 @@
 		transform: translateX(-50%);
 
 		text-align: center;
+		font-weight: 400;
 		opacity: .9;
 
 		i {
-			@include animation(bounce 2s infinite);
+			@include animation(bounce 1.8s infinite);
 		}
 	}
 }
@@ -99,10 +113,10 @@
 	}
 
 	40% {
-		@include transform(translateY(-6px));
+		@include transform(translateY(-5px));
 	}
 
 	60% {
-		@include transform(translateY(-3px));
+		@include transform(translateY(-2.5px));
 	}
 }
