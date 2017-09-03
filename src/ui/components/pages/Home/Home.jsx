@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
+import Section from "../../organisms/Section"
 import SkillList from "../../organisms/SkillsList"
 
 class Home extends Component {
@@ -11,7 +12,13 @@ class Home extends Component {
 	render(){
 		return(
 			<div className="page-home">
-				<SkillList/>
+				<Section
+					title="Mes compétences"
+					subTitle="Autodidacte, je peux acquérir de nouvelles compétences."
+					id="skills"
+				>
+					<SkillList/>
+				</Section>
 			</div>
 		);
 	}

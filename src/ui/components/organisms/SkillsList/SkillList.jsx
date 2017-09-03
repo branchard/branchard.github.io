@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import {Container, Row, Col} from 'reactstrap';
 
+import SkillCard from "../../molecules/SkillCard";
+
 class SkillList extends Component {
 	constructor(props){
 		super(props);
@@ -14,11 +16,38 @@ class SkillList extends Component {
 
 	render(){
 		return(
-			<Container>
-				<Row>
-					<h2>Skills</h2>
-				</Row>
-			</Container>
+			<ul className="row skill-list">
+				<SkillCard
+					title="Front-end"
+					iconClass="fa fa-desktop"
+					skills={[
+						"HTML/CSS",
+						"JavaScript (ES6)",
+						"Bootstrap 4",
+						"jQuery",
+						"React"
+					]}
+				/>
+				<SkillCard
+					title="Back-end"
+					iconClass="fa fa-server"
+					skills={[
+						"Node.js",
+						"Meteor",
+						"Symfony (PHP)",
+						"SQL / MongoDB",
+						"Linux / Apache / Nginx"
+					]}
+				/>
+				<SkillCard
+					title="Autre"
+					iconClass="fa fa-gear"
+					skills={[
+						"Photoshop",
+						"Anglais technique"
+					]}
+				/>
+			</ul>
 		)
 	}
 }

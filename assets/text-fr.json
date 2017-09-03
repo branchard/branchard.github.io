@@ -1,0 +1,16 @@
+{
+	"skills": {
+		"title": "Mes compétences",
+		"subTitle": "Autodidacte, je peux acquérir de nouvelles compétences.",
+		"details": [
+			{
+				"title": "Front-end",
+				"iconClass": "fa fa-desktop",
+				"list": [
+					"HTML / CSS",
+					"JS"
+				]
+			}
+		]
+	}
+}

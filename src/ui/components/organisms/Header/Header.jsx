@@ -83,7 +83,7 @@ class Header extends Component {
 					</div>
 				</div>
 				<div className="next">
-					<a href="#">
+					<a href="#skills">
 						En savoir plus
 						<br/>
 						<i className="fa fa-chevron-down"></i>
