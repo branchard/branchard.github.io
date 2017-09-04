@@ -1,28 +1,38 @@
-import React from "react";
+import React, {Component} from 'react';
 
 import {Container, Row, Col} from 'reactstrap';
 
-const Section = ({title, subTitle, children, id}) => {
-	let subTitleElm;
-	if(subTitle){
-		subTitleElm = (
-			<Row className="subtitle-row">
-				<p className="col-12 text-center ">{subTitle}</p>
-			</Row>
-		);
+class Section extends Component {
+	constructor(props){
+		super(props);
+
+		this.state = {};
 	}
 
-	return(
-		<section className="page-section" id={id}>
-			<Container>
-				<Row className="title-row">
-					<h2 className="col-12 text-center ">{title}</h2>
+	render(){
+		let {title, subTitle, children, id} = this.props;
+
+		let subTitleElm;
+		if(subTitle){
+			subTitleElm = (
+				<Row className="subtitle-row">
+					<p className="col-12 text-center ">{subTitle}</p>
 				</Row>
-				{subTitleElm}
-				{children}
-			</Container>
-		</section>
-	);
-};
+			);
+		}
+
+		return(
+			<section className="page-section" id={id}>
+				<Container>
+					<Row className="title-row">
+						<h2 className="col-12 text-center ">{title}</h2>
+					</Row>
+					{subTitleElm}
+					{children}
+				</Container>
+			</section>
+		);
+	}
+}
 
 export default Section;

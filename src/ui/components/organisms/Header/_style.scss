@@ -91,9 +91,11 @@
 		text-align: center;
 		font-weight: 400;
 		opacity: .9;
-
-		i {
-			@include animation(bounce 1.8s infinite);
+		a {
+			display: block;
+			i {
+				@include animation(bounce 1.8s infinite);
+			}
 		}
 	}
 }

@@ -15,21 +15,11 @@ class MainTemplate extends Component {
 
 	render() {
 		const {header, children, ...props} = this.props;
-		console.log(this.props);
-
 
 		return (
 	        <div {...props} className="app-layout main-template">
 	            <div className="header-wrapper">{header}</div>
-				<div className="app-body">
-					<main className="main">
-						<div className="main-overlay" onClick={this.overlayClickHandler}></div>
-
-						<Container className="main-container" fluid={true}>
-							{children}
-						</Container>
-					</main>
-				</div>
+				{children}
 	        </div>
 	    )
 	}

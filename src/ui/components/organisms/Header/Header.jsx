@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom'
+import Scrollchor from 'react-scrollchor';;
 
 import Particles from 'react-particles-js';
 
@@ -43,27 +45,35 @@ class Header extends Component {
 		}
 
 		this.componentDidMount = this.componentDidMount.bind(this);
+		this.componentWillUnmount = this.componentWillUnmount.bind(this);
 	}
 
 	componentDidMount(){
+		this._mounted = true;
 		let that = this;
 
 		// typing effect init
 		setTimeout(function() {
 			(function loop() {
-			    var rand = Math.round(Math.random() * (300 - 100)) + 100;
+			    var rand = Math.round(Math.random() * (300 - 75)) + 75;
 			    setTimeout(function() {
-					that.setState({
-						typingEffect: that.state.typingEffect + textToType[that.state.typingEffect.length]
-					})
+					if(that._mounted) { // TODO: This is bad
+						that.setState({
+							typingEffect: that.state.typingEffect + textToType[that.state.typingEffect.length]
+						})
 
-					// continue typing effect if textToType is not entirely print
-					if(that.state.typingEffect.length < textToType.length){
-						loop();
+						// continue typing effect if textToType is not entirely print
+						if(that.state.typingEffect.length < textToType.length){
+							loop();
+						}
 					}
 			    }, rand);
 			}());
 		}, 500);
+	}
+
+	componentWillUnmount() {
+	    this._mounted = false;
 	}
 
 	render(){
@@ -83,12 +93,11 @@ class Header extends Component {
 					</div>
 				</div>
 				<div className="next">
-					<a href="#skills">
+					<Scrollchor to="#skills">
 						En savoir plus
 						<br/>
 						<i className="fa fa-chevron-down"></i>
-					</a>
-
+					</Scrollchor>
 				</div>
 			</header>
 		)

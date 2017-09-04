@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import Section from "../../organisms/Section"
-import SkillList from "../../organisms/SkillsList"
+import Section from "../../organisms/Section";
+import SkillList from "../../organisms/SkillsList";
+import Footer from "../../organisms/Footer";
 
 class Home extends Component {
 	constructor(props) {
@@ -19,6 +20,7 @@ class Home extends Component {
 				>
 					<SkillList/>
 				</Section>
+				<Footer/>
 			</div>
 		);
 	}

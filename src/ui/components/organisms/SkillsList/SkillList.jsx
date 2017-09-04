@@ -23,7 +23,7 @@ class SkillList extends Component {
 					skills={[
 						"HTML/CSS",
 						"JavaScript (ES6)",
-						"Bootstrap 4",
+						"Bootstrap 3 et 4",
 						"jQuery",
 						"React"
 					]}
@@ -34,6 +34,7 @@ class SkillList extends Component {
 					skills={[
 						"Node.js",
 						"Meteor",
+						"Django (Python)",
 						"Symfony (PHP)",
 						"SQL / MongoDB",
 						"Linux / Apache / Nginx"
