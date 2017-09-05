@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import Section from "../../organisms/Section";
 import SkillList from "../../organisms/SkillsList";
+import PdfView from "../../organisms/PdfView";
 import Footer from "../../organisms/Footer";
 
 class Home extends Component {
@@ -20,6 +21,7 @@ class Home extends Component {
 				>
 					<SkillList/>
 				</Section>
+				{/* <PdfView/> */}
 				<Footer/>
 			</div>
 		);
