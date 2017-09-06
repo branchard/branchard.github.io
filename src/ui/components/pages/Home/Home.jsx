@@ -144,7 +144,7 @@ class Home extends Component {
 								details: [
 									"Mise en place d’une interface web pour créer des CV et des lettres de motivation",
 									"Travail en groupe de 7",
-									"Méthode de développement"
+									"Méthodes de développement"
 								],
 								techs: [
 									"Silex",
