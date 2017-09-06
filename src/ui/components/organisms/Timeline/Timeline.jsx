@@ -7,6 +7,13 @@ import {Card, CardImg, CardText, CardBlock, CardHeader,
 
 import SkillCard from "../../molecules/SkillCard";
 
+function guidGenerator() {
+    var S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    };
+    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+} // TODO move in "utils" module
+
 class Timeline extends Component {
 
 	static propTypes = {
@@ -20,7 +27,7 @@ class Timeline extends Component {
 			timelineHeight: 1000
 		}
 
-		this.cardsClass = "timeline-cards-444";
+		this.cardsClass = `timeline-cards-${guidGenerator()}`;
 
 		this.renderCards = this.renderCards.bind(this);
 		this.componentDidMount = this.componentDidMount.bind(this);
