@@ -11,6 +11,7 @@ html, body, #app {
 a {
 	color: inherit;
 	cursor: pointer;
+	outline: 0;
 
 	&:hover {
 		color: inherit;
