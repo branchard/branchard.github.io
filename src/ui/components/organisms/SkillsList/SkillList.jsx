@@ -22,8 +22,9 @@ class SkillList extends Component {
 					iconClass="fa fa-desktop"
 					skills={[
 						"HTML/CSS",
-						"JavaScript (ES6)",
+						"SASS",
 						"Bootstrap 3 et 4",
+						"JavaScript (ES6)",
 						"jQuery",
 						"React"
 					]}
@@ -35,7 +36,7 @@ class SkillList extends Component {
 						"Node.js",
 						"Meteor",
 						"Django (Python)",
-						"Symfony (PHP)",
+						"Silex (PHP orienté objet)",
 						"SQL / MongoDB",
 						"Linux / Apache / Nginx"
 					]}
@@ -44,6 +45,7 @@ class SkillList extends Component {
 					title="Autre"
 					iconClass="fa fa-gear"
 					skills={[
+						"Git",
 						"Photoshop",
 						"Anglais technique"
 					]}
