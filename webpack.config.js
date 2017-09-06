@@ -1,20 +1,21 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = function(env){
 
 	let isProduction = process.argv.indexOf('-p') !== -1;
 	let isStats = env && env.stats;
-	let outputDir = isStats ? `${__dirname}/log` : `${__dirname}/build`;
-
+	//let outputDir = isStats ? `${__dirname}/log` : `${__dirname}/build`;
+	let outputDir = `${__dirname}`;
 	//make plugins list
 	let pluginsList = [];
 
 	if(isStats){
 		pluginsList.push(new Visualizer());
 	}else{
-		pluginsList.push(new ExtractTextPlugin({filename: 'style.css'}));
+		pluginsList.push(new ExtractTextPlugin({filename: `build/style.css`}));
 	}
 
 	if (isProduction) {
@@ -23,6 +24,11 @@ module.exports = function(env){
 	            comments: false
 	        }
 	    }));
+
+		pluginsList.push(new HtmlWebpackPlugin({
+			hash: true,
+			template: 'src/template.html'
+		}));
 	}
 
 	// make use list for css/scss modules
@@ -53,7 +59,7 @@ module.exports = function(env){
 	    output: {
 	        path: outputDir,
 	        publicPath: '/build/',
-	        filename: 'bundle.js'
+	        filename: `build/bundle.js`
 	    },
 	    resolve: {
 	        extensions: ['.js', '.jsx']
