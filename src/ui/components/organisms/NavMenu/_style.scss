@@ -1,4 +1,8 @@
 .nav-menu {
+	.nav-link:focus {
+		color: inherit;
+	}
+
 	font-weight: 400;
 	color: $white-base;
 	&.bg {
