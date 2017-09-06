@@ -26,7 +26,6 @@ class Home extends Component {
 					title="Mes expériences"
 					id="experiences"
 					secondary
-					style={{overflow: "auto"}}
 				>
 					<Timeline
 						content={[
@@ -113,7 +112,6 @@ class Home extends Component {
 				<Section
 					title="Mes expériences"
 					id="trainings"
-					style={{overflow: "auto"}}
 				>
 					<Timeline
 						content={[
