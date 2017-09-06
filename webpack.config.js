@@ -58,7 +58,7 @@ module.exports = function(env){
 	    },
 	    output: {
 	        path: outputDir,
-	        publicPath: '/build/',
+	        publicPath: '/',
 	        filename: `build/bundle.js`
 	    },
 	    resolve: {
