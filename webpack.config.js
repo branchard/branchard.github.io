@@ -1,56 +1,75 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const Visualizer = require('webpack-visualizer-plugin');
 
-let isProduction = process.argv.indexOf('-p') !== -1;
+module.exports = function(env){
 
-//make plugins list
-let pluginsList = [new ExtractTextPlugin({filename: 'style.css'})]
+	let isProduction = process.argv.indexOf('-p') !== -1;
+	let isStats = env && env.stats;
+	let outputDir = isStats ? `${__dirname}/log` : `${__dirname}/build`;
 
-if (isProduction) {
-    pluginsList.push(new webpack.optimize.UglifyJsPlugin({
-        output: {
-            comments: false
-        }
-    }));
-}
+	//make plugins list
+	let pluginsList = [];
 
-module.exports = {
-    entry: {
-        main: [`${__dirname}/src/index.js`, `${__dirname}/src/styles/main.scss`]
-    },
-    output: {
-        path: `${__dirname}/build`,
-        publicPath: '/build/',
-        filename: 'bundle.js'
-    },
-    resolve: {
-        extensions: ['.js', '.jsx']
-    },
-    module: {
-        rules: [
-            {
-                test: /.jsx?$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
-            }, {
-                test: /\.(css|scss)/,
-                use: ExtractTextPlugin.extract({
-                    use: [
-                        {
-                            loader: "css-loader",
-                            options: {
-                                sourceMap: !isProduction
-                            }
-                        }, {
-                            loader: "sass-loader",
-                            options: {
-                                sourceMap: !isProduction
-                            }
-                        }
-                    ]
-                })
-            }
-        ]
-    },
-    plugins: pluginsList
+	if(isStats){
+		pluginsList.push(new Visualizer());
+	}else{
+		pluginsList.push(new ExtractTextPlugin({filename: 'style.css'}));
+	}
+
+	if (isProduction) {
+	    pluginsList.push(new webpack.optimize.UglifyJsPlugin({
+	        output: {
+	            comments: false
+	        }
+	    }));
+	}
+
+	// make use list for css/scss modules
+	let use = [
+		{
+			loader: "css-loader",
+			options: {
+				sourceMap: !isProduction
+			}
+		}, {
+			loader: "sass-loader",
+			options: {
+				sourceMap: !isProduction
+			}
+		}
+	];
+
+	if(!isStats){
+		use = ExtractTextPlugin.extract({
+			use: use
+		});
+	}
+
+	return ({
+	    entry: {
+	        main: [`${__dirname}/src/index.js`, `${__dirname}/src/styles/main.scss`]
+	    },
+	    output: {
+	        path: outputDir,
+	        publicPath: '/build/',
+	        filename: 'bundle.js'
+	    },
+	    resolve: {
+	        extensions: ['.js', '.jsx']
+	    },
+	    module: {
+	        rules: [
+	            {
+	                test: /.jsx?$/,
+	                exclude: /node_modules/,
+	                loader: 'babel-loader'
+	            }, {
+	                test: /\.(css|scss)/,
+	                use: use
+	            }
+	        ]
+	    },
+	    plugins: pluginsList
+	});
 };
