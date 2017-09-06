@@ -43,8 +43,8 @@ class Timeline extends Component {
 
 		let marginHeight = 0;
 		for (let i = 0; i < cards.length / 2; i++) {
-			totalHeight += cards[i].clientHeight + 60;//marginHeight;
-			marginHeight = 60;
+			totalHeight += cards[i].clientHeight + 80;// 60 = margin-top height;
+			marginHeight = 80;
 		}
 
 		this.setState({
