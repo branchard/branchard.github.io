@@ -7,7 +7,83 @@
 		<link rel="icon" href="assets/favicon.ico?v=2" />
 		<link rel="stylesheet" href="/build/style.css?v=2">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style media="screen">
+			/* LOADER */
+			html, body, #app-loader {
+				height: 100%;
+			}
 
+			#app-loader	{
+				color: white;
+
+				background-color: #2098D1;
+			    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0F87C0', endColorstr='#FF2098D1');
+			    background-image: -owg-linear-gradient(top, #0f87c0 0%, #2098D1 31%, #2098D1 100%);
+			    background-image: -webkit-linear-gradient(top, #0f87c0 0%, #2098D1 31%, #2098D1 100%);
+			    background-image: -moz-linear-gradient(top, #0f87c0 0%, #2098D1 31%, #2098D1 100%);
+			    background-image: -o-linear-gradient(top, #0f87c0 0%, #2098D1 31%, #2098D1 100%);
+			    background-image: linear-gradient(top, #0f87c0 0%, #2098D1 31%, #2098D1 100%);
+			}
+
+			#app-loader span {
+				position: fixed;
+			  	z-index: 200;
+			  	height: 2em;
+			  	width: 2em;
+			  	overflow: show;
+			  	margin: auto;
+			  	top: 0;
+			  	left: 0;
+			  	bottom: 0;
+			  	right: 0;
+
+			}
+
+			#app-loader span {
+				display:none;
+			}
+
+			#app-loader::after {
+				content: '';
+				display: block;
+				background-image: url("/assets/logo.png");
+				z-index: 300;
+				animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) infinite;
+				position: fixed;
+				z-index: 200;
+				height: 64px;
+				width: 64px;
+				overflow: show;
+				margin: auto;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+
+			@keyframes shake {
+				10%, 90% {
+					/*transform: translate3d(-0.5px, 0, 0);*/
+					transform: rotate(-2.5deg);
+				}
+
+				20%, 80% {
+					/*transform: translate3d(1px, 0, 0);*/
+					transform: rotate(5deg);
+				}
+
+				30%, 50%, 70% {
+					/*transform: translate3d(-2px, 0, 0);*/
+					transform: rotate(-10deg);
+				}
+
+				40%, 60% {
+					/*transform: translate3d(2px, 0, 0);*/
+					transform: rotate(10deg);
+				}
+			}
+
+		</style>
 		<script type="text/javascript">
 			// Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
 			// ----------------------------------------------------------------------
@@ -37,6 +113,9 @@
     	</script>
 	</head>
 	<body>
+		<div id="app-loader">
+			<span>Chargement&#8230;</span>
+		</div>
 		<div id="app"></div>
 		<script src="/build/bundle.js?v=2"></script>
 	</body>

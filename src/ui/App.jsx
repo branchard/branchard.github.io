@@ -18,15 +18,12 @@ class App extends React.Component {
 
 	componentDidMount(){
 		console.log("### App.jsx DidMount ###");
-		//console.log(scrollSpy);
 		let that = this;
-		/*scrollSpy.addSpyHandler(function(){
-			let callback = function(){
-				console.log("this is a callback");
-			}
 
-			return callback;
-		});*/
+		// remove LOADER
+		let loader = document.getElementById('app-loader')
+		loader.outerHTML = "";
+
 		const hash = window.location.pathname;
 		if (hash !== ''){
 			scroller.scrollTo(hash.replace('/', ''), {
