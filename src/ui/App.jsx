@@ -39,8 +39,14 @@ class App extends React.Component {
 			//console.log(to, element);
 			//window.location.hash = `#${to}`;
 			if(!that.scrollTo){
-				console.log("push to history");
-				history.pushState({anchor: to}, `${to}`, `${to}`)
+				let currentState;
+				if(history.state){
+					currentState = history.state.anchor;
+				}
+				if(currentState == "undefined" || currentState !== to){ // prevent to push multiple times the same anchor
+					console.log("push to history");
+					history.pushState({anchor: to}, `${to}`, `${to}`)
+				}
 			}
 			that.scrollTo = false;
 		});
