@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-scroll';
 import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
+import QueueAnim from 'rc-queue-anim';
 
 class NavMenu extends Component {
 	constructor(props){
@@ -47,16 +48,25 @@ class NavMenu extends Component {
 				<Navbar light inverse toggleable>
 					<NavbarToggler right onClick={this.toggle}/>
 					<Collapse navbar isOpen={this.state.isOpen}>
-						<Nav className="ml-auto" navbar>
-							<NavItem>
-								<Link className="nav-link" href="/skills" to="skills" smooth={true} spy={true}>
-									Compétences
-								</Link>
-							</NavItem>
-							<NavItem>
-								<NavLink href="https://github.com/branchard">Github</NavLink>
-							</NavItem>
-						</Nav>
+						{/* <Nav className="ml-auto" navbar> */}
+							<QueueAnim
+								component={Nav}
+								componentProps={{className:"ml-auto", navbar: true}}
+								type="top"
+								delay={300}
+								duration={500}
+								interval={0}
+							>
+								<NavItem key={1}>
+									<Link className="nav-link" href="/skills" to="skills" smooth={true} spy={true}>
+										Compétences
+									</Link>
+								</NavItem>
+								<NavItem key={2}>
+									<NavLink href="https://github.com/branchard">Github</NavLink>
+								</NavItem>
+							</QueueAnim>
+						{/* </Nav> */}
 					</Collapse>
 				</Navbar>
 			</div>

@@ -17,6 +17,9 @@
 // Include Generic Rules
 @import "generic.scss";
 
+// import anim lib
+@import "~rc-queue-anim/assets/index.css";
+
 // Import components style
 @import "../ui/components/templates/MainTemplate/style";
 @import "../ui/components/pages/Home/style";

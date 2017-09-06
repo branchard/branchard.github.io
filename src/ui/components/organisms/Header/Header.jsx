@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-scroll';
-//import {NavLink, Link} from 'react-router-dom'
-//import Scrollchor from 'react-scrollchor';;
-
+import QueueAnim from 'rc-queue-anim';
 import Particles from 'react-particles-js';
 
 const particlesParams = {
@@ -85,20 +83,24 @@ class Header extends Component {
 				</div>
 				<div className="centered-container">
 					<div className="inner">
-						<h1>
-							<span>B. Branchard</span>
-							<span className="spe">
-								{this.state.typingEffect === undefined ? "Développeur Full Stack" : this.state.typingEffect}
-							</span>
-						</h1>
+						<QueueAnim type="right" delay={300} duration={500}>
+							<h1 key="c">
+								<span>B. Branchard</span>
+								<span className="spe">
+									{this.state.typingEffect === undefined ? "Développeur Full Stack" : this.state.typingEffect}
+								</span>
+							</h1>
+						</QueueAnim>
 					</div>
 				</div>
 				<div className="next">
-					<Link href="/skills" to="skills" smooth={true} spy={false}>
-						En savoir plus
-						<br/>
-						<i className="fa fa-chevron-down"></i>
-					</Link>
+					<QueueAnim type="bottom" delay={300} duration={500}>
+						<Link key="c" href="/skills" to="skills" smooth={true} spy={false}>
+							En savoir plus
+							<br/>
+							<i className="fa fa-chevron-down"></i>
+						</Link>
+					</QueueAnim>
 				</div>
 			</header>
 		)
