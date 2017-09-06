@@ -54,7 +54,7 @@ class NavMenu extends Component {
 								</Link>
 							</NavItem>
 							<NavItem>
-								<NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+								<NavLink href="https://github.com/branchard">Github</NavLink>
 							</NavItem>
 						</Nav>
 					</Collapse>
