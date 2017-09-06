@@ -6,6 +6,13 @@
 		left: 0;
 		height: 100%;
 		width: 100%;
-		z-index: 1000;
+		z-index: 500;
+	}
+
+	.nav-wrapper {
+		position: fixed;
+		width: 100%;
+		z-index: 800;
+		top: 0;
 	}
 }

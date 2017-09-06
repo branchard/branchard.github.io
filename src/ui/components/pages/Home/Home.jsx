@@ -21,7 +21,7 @@ class Home extends Component {
 				>
 					<SkillList/>
 				</Section>
-				{/* <PdfView/> */}
+				{/* <PdfView scale={10.0}/> */}
 				<Footer/>
 			</div>
 		);

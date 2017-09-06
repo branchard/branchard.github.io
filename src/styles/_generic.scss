@@ -16,4 +16,9 @@ a {
 		color: inherit;
 		text-decoration: none;
 	}
+
+	&:focus { // boostrap 4 alpha bug
+		color: inherit;
+		text-decoration: none;
+	}
 }

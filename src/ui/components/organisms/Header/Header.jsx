@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom'
-import Scrollchor from 'react-scrollchor';;
+import {Link} from 'react-scroll';
+//import {NavLink, Link} from 'react-router-dom'
+//import Scrollchor from 'react-scrollchor';;
 
 import Particles from 'react-particles-js';
 
@@ -93,11 +94,11 @@ class Header extends Component {
 					</div>
 				</div>
 				<div className="next">
-					<Scrollchor to="#skills">
+					<Link href="/skills" to="skills" smooth={true} spy={false}>
 						En savoir plus
 						<br/>
 						<i className="fa fa-chevron-down"></i>
-					</Scrollchor>
+					</Link>
 				</div>
 			</header>
 		)

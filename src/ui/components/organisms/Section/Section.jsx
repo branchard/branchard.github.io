@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Element} from 'react-scroll';
 import {Container, Row, Col} from 'reactstrap';
 
 class Section extends Component {
@@ -23,13 +23,15 @@ class Section extends Component {
 
 		return(
 			<section className="page-section" id={id}>
-				<Container>
-					<Row className="title-row">
-						<h2 className="col-12 text-center ">{title}</h2>
-					</Row>
-					{subTitleElm}
-					{children}
-				</Container>
+				<Element name={id} className="element">
+					<Container>
+						<Row className="title-row">
+							<h2 className="col-12 text-center ">{title}</h2>
+						</Row>
+						{subTitleElm}
+						{children}
+					</Container>
+				</Element>
 			</section>
 		);
 	}

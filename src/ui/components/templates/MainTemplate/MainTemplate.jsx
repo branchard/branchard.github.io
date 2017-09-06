@@ -5,6 +5,7 @@ import {Container, Row, Col} from 'reactstrap';
 
 class MainTemplate extends Component {
 	static propTypes = {
+		nav: PropTypes.node,
 		header: PropTypes.node,
 		children: PropTypes.any
 	};
@@ -14,11 +15,12 @@ class MainTemplate extends Component {
   	}
 
 	render() {
-		const {header, children, ...props} = this.props;
+		const {header, nav, children, ...props} = this.props;
 
 		return (
 	        <div {...props} className="app-layout main-template">
 	            <div className="header-wrapper">{header}</div>
+				<div className="nav-wrapper">{nav}</div>
 				{children}
 	        </div>
 	    )
