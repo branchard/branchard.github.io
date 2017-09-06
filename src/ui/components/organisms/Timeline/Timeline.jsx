@@ -41,7 +41,7 @@ class Timeline extends Component {
 		}
 
 		this.setState({
-			timelineHeight: totalHeight + 40
+			timelineHeight: totalHeight
 		});
 	}
 

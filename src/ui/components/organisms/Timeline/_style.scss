@@ -1,15 +1,27 @@
+.page-section.secondary {
+	.timeline {
+		.card {
+			.card-header {
+				&:before {
+					box-shadow: 0px 0px 2px 8px $white-second;
+				}
+			}
+		}
+	}
+}
+
 .timeline {
 	display: flex;
 	flex-flow: column wrap;
 	padding: 0;
-	height: 810px; // test
-	margin-bottom: 200px; // test
+	//height: 810px; // test
+	margin-bottom: 6rem; // test
 	&:after {
 	    z-index: 1;
 	    content: "";
 	    position: absolute;
 	    top: 4rem;
-	    bottom: 0;
+	    bottom: 6rem;
 	    left: 50%;
 	    //border-left: 1px solid rgba(191, 191, 191, 0.4);
 		border-left: 1px solid #bdbdbd;
@@ -36,6 +48,7 @@
 				border-radius: 9px;
 				box-shadow: 0px 0px 2px 8px $white-base;
 				top: 43%;
+				z-index: 100;
 				//left: 110.5%;
 			}
 
@@ -116,8 +129,9 @@
 		.techs {
 			padding-top: 0;
 			.badge {
-				margin: 0 4px;
+				margin: 4px;
 				background-color: $light-blue;
+				padding: .37em .6em;
 			}
 		}
 

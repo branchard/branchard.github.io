@@ -10,7 +10,7 @@ class Section extends Component {
 	}
 
 	render(){
-		let {title, subTitle, children, id} = this.props;
+		let {title, subTitle, children, id, secondary, style} = this.props;
 
 		let subTitleElm;
 		if(subTitle){
@@ -22,9 +22,9 @@ class Section extends Component {
 		}
 
 		return(
-			<section className="page-section" id={id}>
+			<section className={`page-section ${secondary ? "secondary" : ""}`} id={id}>
 				<Element name={id} className="element">
-					<Container>
+					<Container style={style}>
 						<div className="titles">
 							<Row className="title-row">
 								<h2 className="col-12 text-center ">{title}</h2>

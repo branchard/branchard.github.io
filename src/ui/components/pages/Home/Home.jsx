@@ -25,6 +25,8 @@ class Home extends Component {
 				<Section
 					title="Mes expériences"
 					id="experiences"
+					secondary
+					style={{overflow: "auto"}}
 				>
 					<Timeline
 						content={[
@@ -56,7 +58,8 @@ class Home extends Component {
 								subtitle: "Mme. Brossier - Orléans (45)",
 								details: [
 									"Mise en place d’une interface web pour créer des CV et des lettres de motivation",
-									"Travail en groupe de 7"
+									"Travail en groupe de 7",
+									"Méthode de développement"
 								],
 								techs: [
 									"Silex",
