@@ -53,16 +53,26 @@ class NavMenu extends Component {
 								component={Nav}
 								componentProps={{className:"ml-auto", navbar: true}}
 								type="top"
-								delay={300}
+								delay={500}
 								duration={500}
-								interval={0}
+								interval={15}
 							>
-								<NavItem key={1}>
+								<NavItem key={0}>
 									<Link className="nav-link" href="/skills" to="skills" smooth={true} spy={true}>
 										Compétences
 									</Link>
 								</NavItem>
+								<NavItem key={1}>
+									<Link className="nav-link" href="/experiences" to="experiences" smooth={true} spy={true}>
+										Expériences
+									</Link>
+								</NavItem>
 								<NavItem key={2}>
+									<Link className="nav-link" href="/trainings" to="trainings" smooth={true} spy={true}>
+										Formations
+									</Link>
+								</NavItem>
+								<NavItem key={3}>
 									<NavLink href="https://github.com/branchard">Github</NavLink>
 								</NavItem>
 							</QueueAnim>

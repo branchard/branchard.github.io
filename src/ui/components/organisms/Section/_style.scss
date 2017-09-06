@@ -3,19 +3,23 @@
 	.element {
 		padding-top: 6rem;
 	}
-	.title-row {
-		margin: 0 0 1rem;
 
-		h2 {
-			font-size: 2rem;
-			font-weight: 700;
+	.titles {
+		margin-bottom: 4rem;
+		.title-row {
+			margin: 0 0 1rem;
+
+			h2 {
+				font-size: 2rem;
+				font-weight: 700;
+			}
 		}
-	}
 
-	.subtitle-row {
-		p {
-			margin-bottom: 4rem;
-			font-size: 1.3rem;
+		.subtitle-row {
+			p {
+				//margin-bottom: 4rem;
+				font-size: 1.3rem;
+			}
 		}
 	}
 }

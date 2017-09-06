@@ -25,10 +25,12 @@ class Section extends Component {
 			<section className="page-section" id={id}>
 				<Element name={id} className="element">
 					<Container>
-						<Row className="title-row">
-							<h2 className="col-12 text-center ">{title}</h2>
-						</Row>
-						{subTitleElm}
+						<div className="titles">
+							<Row className="title-row">
+								<h2 className="col-12 text-center ">{title}</h2>
+							</Row>
+							{subTitleElm}
+						</div>
 						{children}
 					</Container>
 				</Element>
