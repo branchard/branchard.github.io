@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import PDF from 'react-pdf-js';
-import {NavLink} from 'react-router-dom'
-import Scrollchor from 'react-scrollchor';;
+//import PDF from 'react-pdf-js';
 
 class PdfView extends Component {
 	constructor(props){
@@ -14,7 +12,7 @@ class PdfView extends Component {
 	render(){
 		return(
 			<div>
-				<PDF file="assets/CV-benoit-branchard-print.pdf" />
+				{/* <PDF file="assets/CV-benoit-branchard-print.pdf" /> */}
 			</div>
 		)
 	}

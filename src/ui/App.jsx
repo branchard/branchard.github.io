@@ -1,13 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-	BrowserRouter,
-	Redirect,
-	Switch,
-	Route,
-	Link,
-	withRouter
-} from "react-router-dom";
 import {Events, scrollSpy, scroller, animateScroll} from 'react-scroll';
 
 import MainTemplate from "./components/templates/MainTemplate";
