@@ -16,14 +16,14 @@ class Home extends Component {
 		return(
 			<div className="page-home">
 				<Section
-					title="Mes compétences"
+					title="Compétences"
 					subTitle="Autodidacte, je peux acquérir de nouvelles compétences."
 					id="skills"
 				>
 					<SkillList/>
 				</Section>
 				<Section
-					title="Mes expériences"
+					title="Expériences"
 					id="experiences"
 					secondary
 				>
@@ -110,7 +110,7 @@ class Home extends Component {
 					/>
 				</Section>
 				<Section
-					title="Mes expériences"
+					title="Formations"
 					id="trainings"
 				>
 					<Timeline
