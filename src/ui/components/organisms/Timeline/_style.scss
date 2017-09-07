@@ -28,6 +28,7 @@
 	}
 
 	.card {
+		z-index: 300;
 		width: 45%;
 		box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
 		border: none;
@@ -185,5 +186,138 @@
 		.card:nth-child(#{$i*2-1})   { order: $i }
 		.card:nth-child(#{$i*2})     { order: $counter }
 		$counter: $counter + 1;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	ul.timeline {
+		display: block;
+		flex-flow: column wrap;
+		padding: 0;
+		//height: 810px; // test
+		//margin-bottom: 6rem; // test
+		&:after {
+		    z-index: 1;
+		    content: "";
+		    position: absolute;
+		    top: 4rem;
+		    bottom: 6rem;
+		    left: 50%;
+		    //border-left: 1px solid rgba(191, 191, 191, 0.4);
+			border-left: 1px solid #bdbdbd;
+		}
+
+		.card {
+			width: 100%;
+			margin: auto;
+
+			.card-header {
+				position: relative;
+				display: flex;
+				background-color: $light-blue;
+				color: $white-base;
+				height: 76px;
+
+				&:before {
+					content: none;
+				}
+
+				&:after {
+				    content: none;
+				}
+
+				.date-box {
+					display: inline;
+					float: left;
+					text-align: center;
+					margin-right: 1rem;
+					margin-top: 2px;
+
+					span {
+						display: block;
+						line-height: 1.5rem;
+						font-size: 1rem;
+					}
+
+					.day {
+						font-weight: 600;
+					}
+
+					.month {
+						font-weight: 200;
+					}
+
+					.year {
+						font-weight: 400;
+					}
+
+					.chevron {
+						font-weight: 600;
+						line-height: 3rem;
+						opacity: .9;
+					}
+				}
+				.titles {
+					padding-left: 1rem;
+					border-left: 1px solid rgba(255, 255, 255, .3);
+
+					.card-title {
+						font-weight: 100;
+						line-height: 1.5rem;
+						font-size: 1.2rem;
+					}
+
+					.card-subtitle {
+						font-weight: 500;
+						line-height: 1rem;
+						font-size: 1rem;
+					}
+				}
+
+
+			}
+
+			.card-block {
+				ul {
+					margin: 0;
+					font-size: .9rem;
+					color: #6f7d82;
+					font-weight: 500;
+					li:not(:first-child) {
+						margin-top: .7rem;
+					}
+				}
+			}
+
+			.techs {
+				padding-top: 0;
+				.badge {
+					margin: 4px;
+					background-color: $light-blue;
+					padding: .37em .6em;
+				}
+			}
+		}
+
+		.card:not(:first-child) {
+			margin-top: 60px;
+		}
+
+		.card:nth-child(odd) {
+	    	margin-right: auto;
+		}
+
+		.card:nth-child(even) {
+	    	margin-left: auto;
+		}
+
+		$items: 10;
+		$rows: ceil($items/2);
+		$counter: $items - $rows + 2;
+		@for $i from 1 through $rows {
+			.card:nth-child(#{$i*2-1})   { order: $i }
+			.card:nth-child(#{$i*2})     { order: $counter }
+			$counter: $counter + 1;
+		}
 	}
 }

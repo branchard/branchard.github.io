@@ -29,27 +29,31 @@ class Timeline extends Component {
 
 		this.cardsClass = `timeline-cards-${guidGenerator()}`;
 
+		this.defineContainerHeight = this.defineContainerHeight.bind(this);
 		this.renderCards = this.renderCards.bind(this);
 		this.componentDidMount = this.componentDidMount.bind(this);
 	}
 
-	componentDidMount(){
-
-		console.log(this.timelineRow);
-		//document.querySelector("#experiences > div > div > div.timeline.row > div:nth-child(1)").clientHeight + 60px
-		console.log(document.querySelectorAll(`.${this.cardsClass}`));
+	defineContainerHeight(){
 		let cards = document.querySelectorAll(`.${this.cardsClass}`);
 		let totalHeight = 0;
+		let isBreakSize = window.innerWidth < 991;
 
-		let marginHeight = 0;
-		for (let i = 0; i < cards.length / 2; i++) {
-			totalHeight += cards[i].clientHeight + 80;// 60 = margin-top height;
-			marginHeight = 80;
+		let marginHeight = (isBreakSize ? 60 : 80);
+		for (let i = 0; i < cards.length / (isBreakSize ? 1 : 2); i++) {
+			totalHeight += cards[i].clientHeight + marginHeight;// 60 = margin-top height;
+			//marginHeight = 80;
 		}
 
 		this.setState({
 			timelineHeight: totalHeight
 		});
+	}
+
+	componentDidMount(){
+		let that = this;
+		this.defineContainerHeight();
+		window.addEventListener('resize', () => {this.defineContainerHeight();});
 	}
 
 	renderCards(){
