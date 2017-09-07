@@ -3,6 +3,15 @@
 	color: $white-base;
 	padding: 2rem 0;
 
+	.btn {
+		margin-bottom: 1rem;
+	}
+
+	.btn-outline-secondary:hover {
+	    color: #fff;
+	    background-color: #313131;
+	}
+
 	.copyright {
 		margin: 1.2rem 0;
 	}
