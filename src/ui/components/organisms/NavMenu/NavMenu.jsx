@@ -72,9 +72,9 @@ class NavMenu extends Component {
 										Formations
 									</Link>
 								</NavItem>
-								<NavItem key={3}>
+								{/* <NavItem key={3}>
 									<NavLink href="https://github.com/branchard">Github</NavLink>
-								</NavItem>
+								</NavItem> */}
 							</QueueAnim>
 						{/* </Nav> */}
 					</Collapse>

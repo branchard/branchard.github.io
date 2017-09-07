@@ -61,26 +61,46 @@ class Timeline extends Component {
 		let that = this;
 		this.props.content.forEach(function(item, i){
 			let detailsList = [];
+			let detailsListUl;
 			if(item.details){
 				item.details.forEach(function(detail, i){
 					detailsList.push(
 						<li key={i}>{detail}</li>
 					)
 				});
+
+				detailsListUl = (
+					<ul>{detailsList}</ul>
+				);
+			}
+
+			let detail;
+			if(item.detail){
+				detail = (
+					<p>{item.detail}</p>
+				)
 			}
 
 			let techsBadges = [];
+			let techsBadgesBlock;
 			if(item.techs){
 				item.techs.forEach(function(tech, i){
 					techsBadges.push(
 						<Badge key={i}>{tech}</Badge>
 					);
 				});
+
+				techsBadgesBlock = (
+					<CardBlock className="techs">
+						{techsBadges}
+					</CardBlock>
+				);
 			}
 
-			cards.push(
-				<Card key={i} tag="li" className={that.cardsClass}>
-					<CardHeader>
+			let dateBox;
+			if(item.dateBegin && item.dateEnd){
+				dateBox = (
+					<div className="date-box-container">
 						<div className="date-box">
 							<span className="month">{item.dateBegin[0]}</span>
 							<span className="year">{item.dateBegin[1]}</span>
@@ -94,19 +114,34 @@ class Timeline extends Component {
 							<span className="month">{item.dateEnd[0]}</span>
 							<span className="year">{item.dateEnd[1]}</span>
 						</div>
+					</div>
+				);
+			}else if (item.dateBegin){
+				dateBox = (
+					<div className="date-box-container">
+						<div className="date-box">
+							<span className="month" style={{width: "7rem"}}>Depuis {item.dateBegin[0]}</span>
+							<span className="year">{item.dateBegin[1]}</span>
+						</div>
+					</div>
+				);
+			}
+
+
+			cards.push(
+				<Card key={i} tag="li" className={that.cardsClass}>
+					<CardHeader>
+						{dateBox}
 						<div className="titles">
 							<CardTitle tag="h3">{item.title}</CardTitle>
 							<CardSubtitle tag="h4">{item.subtitle}</CardSubtitle>
 						</div>
 			        </CardHeader>
 					<CardBlock>
-						<ul>
-							{detailsList}
-						</ul>
+						{detailsListUl}
+						{detail}
         			</CardBlock>
-					<CardBlock className="techs">
-						{techsBadges}
-					</CardBlock>
+					{techsBadgesBlock}
 				</Card>
 			);
 		});
