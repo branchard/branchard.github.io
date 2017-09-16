@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import {Container, Row, Col} from 'reactstrap';
+import {OverPack as ScrollOverPack} from "rc-scroll-anim";
+import QueueAnim from 'rc-queue-anim';
 
 class SkillCard extends Component {
 	static propTypes = {
@@ -28,9 +30,13 @@ class SkillCard extends Component {
 			<li className="skill-card col-12 col-lg-4">
 				<i className={this.props.iconClass}/>
 				<h3>{this.props.title}</h3>
-				<ul>
-					{skills}
-				</ul>
+				<ScrollOverPack
+					playScale="10vh"
+				>
+					<QueueAnim component="ul" key='queueAnim'>
+						{skills}
+					</QueueAnim>
+				</ScrollOverPack>
 			</li>
 		)
 	}

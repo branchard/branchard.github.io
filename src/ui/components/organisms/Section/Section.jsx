@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {Element} from 'react-scroll';
 import {Container, Row, Col} from 'reactstrap';
 
+import {OverPack as ScrollOverPack} from "rc-scroll-anim";
+import QueueAnim from 'rc-queue-anim';
+
 class Section extends Component {
 	constructor(props){
 		super(props);
@@ -15,7 +18,7 @@ class Section extends Component {
 		let subTitleElm;
 		if(subTitle){
 			subTitleElm = (
-				<Row className="subtitle-row">
+				<Row key="b" className="subtitle-row">
 					<p className="col-12 text-center ">{subTitle}</p>
 				</Row>
 			);
@@ -26,10 +29,16 @@ class Section extends Component {
 				<Element name={id} className="element">
 					<Container style={style}>
 						<div className="titles">
-							<Row className="title-row">
-								<h2 className="col-12 text-center ">{title}</h2>
-							</Row>
-							{subTitleElm}
+							<ScrollOverPack
+								playScale="5vh"
+							>
+								<QueueAnim key='queueAnim' interval={25}>
+									<Row key="a" className="title-row">
+												<h2 className="col-12 text-center ">{title}</h2>
+									</Row>
+									{subTitleElm}
+								</QueueAnim>
+							</ScrollOverPack>
 						</div>
 						{children}
 					</Container>

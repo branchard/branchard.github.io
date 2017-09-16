@@ -5,7 +5,9 @@ import {Container, Row, Col} from 'reactstrap';
 import {Card, CardImg, CardText, CardBlock, CardHeader,
 	CardTitle, CardSubtitle, Button, Badge } from 'reactstrap';
 
-import SkillCard from "../../molecules/SkillCard";
+//import SkillCard from "../../molecules/SkillCard";
+import {OverPack as ScrollOverPack} from "rc-scroll-anim";
+import QueueAnim from 'rc-queue-anim';
 
 function guidGenerator() {
     var S4 = function() {
