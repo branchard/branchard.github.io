@@ -54,7 +54,7 @@ class Header extends Component {
 		// typing effect init
 		setTimeout(function() {
 			(function loop() {
-			    var rand = Math.round(Math.random() * (300 - 75)) + 75;
+			    var rand = Math.round(Math.random() * (260 - 75)) + 75;
 			    setTimeout(function() {
 					if(that._mounted) { // TODO: This is bad
 						that.setState({
