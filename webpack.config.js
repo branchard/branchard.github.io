@@ -13,7 +13,7 @@ module.exports = function(env){
 	let pluginsList = [];
 
 	if(isStats){
-		pluginsList.push(new Visualizer());
+		pluginsList.push(new Visualizer({filename: `log/stats.html`}));
 	}else{
 		pluginsList.push(new ExtractTextPlugin({filename: `build/style.css`}));
 	}
