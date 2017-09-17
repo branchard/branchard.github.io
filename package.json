@@ -1,6 +1,7 @@
 {
   "name": "branchard.github.io",
   "version": "0.1.0",
+  "private": true,
   "description": "Branchard GitHub Page",
   "main": "build/bundle.js",
   "scripts": {
@@ -47,7 +48,7 @@
     "react-particles-js": "^1.5.0",
     "react-scroll": "^1.5.4",
     "react-transition-group": "^1.2.0",
-    "react-typist": "git+https://github.com/branchard/react-typist.git",
+    "react-typist": "^1.1.1",
     "reactstrap": "^4.8.0"
   }
 }
