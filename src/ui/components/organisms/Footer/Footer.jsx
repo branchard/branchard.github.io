@@ -10,7 +10,7 @@ const Footer = ({}) => {
 					<a href="/assets/CV-benoit-branchard-print.pdf" className="mx-auto btn btn-outline-secondary">Télécharger mon CV</a>
 				</Row>
 				<Row>
-					<span className="col-12 text-center copyright">B. Branchard © 2017.</span>
+					<span className="col-12 text-center copyright">B. Branchard © 2017</span>
 				</Row>
 			</Container>
 		</footer>
