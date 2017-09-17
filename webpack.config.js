@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Visualizer = require('webpack-visualizer-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = function(env){
 
@@ -13,7 +13,7 @@ module.exports = function(env){
 	let pluginsList = [];
 
 	if(isStats){
-		pluginsList.push(new Visualizer({filename: `log/stats.html`}));
+		pluginsList.push(new BundleAnalyzerPlugin());
 	}else{
 		pluginsList.push(new ExtractTextPlugin({filename: `build/style.css`}));
 	}
