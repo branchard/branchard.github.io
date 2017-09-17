@@ -5,9 +5,9 @@
   "description": "Branchard GitHub Page",
   "main": "build/bundle.js",
   "scripts": {
-    "start": "webpack-dev-server --devtool source-map --history-api-fallback --open",
-    "build": "webpack -p",
-    "stats": "webpack -p --env.stats",
+    "start": "webpack-dev-server --devtool --progress source-map --history-api-fallback --open",
+    "build": "webpack -p --progress",
+    "stats": "webpack -p --progress --env.stats",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
