@@ -19,12 +19,9 @@ class SkillList extends Component {
 
 	render(){
 		return(
-			<ScrollOverPack
-				playScale="10vh"
-			>
-				<QueueAnim component="ul" className="row skill-list" key='queueAnim'>
+				<ul className="row skill-list">
 					<SkillCard
-						key="a"
+						delay={0}
 						title="Front-end"
 						iconClass="fa fa-desktop"
 						skills={[
@@ -37,7 +34,7 @@ class SkillList extends Component {
 						]}
 					/>
 					<SkillCard
-						key="b"
+						delay={200}
 						title="Back-end"
 						iconClass="fa fa-server"
 						skills={[
@@ -50,7 +47,7 @@ class SkillList extends Component {
 						]}
 					/>
 					<SkillCard
-						key="c"
+						delay={400}
 						title="Autre"
 						iconClass="fa fa-gear"
 						skills={[
@@ -59,8 +56,7 @@ class SkillList extends Component {
 							"Anglais technique"
 						]}
 					/>
-				</QueueAnim>
-			</ScrollOverPack>
+				</ul>
 		)
 	}
 }

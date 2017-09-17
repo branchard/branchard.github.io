@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {Container, Row, Col} from 'reactstrap';
 import {OverPack as ScrollOverPack} from "rc-scroll-anim";
-import QueueAnim from 'rc-queue-anim';
+import Tween from 'rc-tween-one';
 
 class SkillCard extends Component {
 	static propTypes = {
@@ -18,26 +18,44 @@ class SkillCard extends Component {
 
 	render(){
 		let skills = [];
+		let that = this;
 		this.props.skills.forEach(function(skill, id){
 			skills.push(
-				<li key={id}>
+				<Tween
+				  key={id}
+				  component="li"
+				  animation={{x: -30, type: 'from', ease: 'easeOutQuart', opacity: 0, delay: id * 150 + that.props.delay}}
+				>
 					{skill}
-				</li>
+				</Tween>
 			);
 		});
 
 		return(
 			<li className="skill-card col-12 col-lg-4">
-				<i className={this.props.iconClass}/>
-				<h3>{this.props.title}</h3>
+				<ScrollOverPack
+					playScale="15vh"
+				>
+					<Tween
+					  key={1}
+					  animation={{x: 30, type: 'from', ease: 'easeOutQuart', opacity: 0, delay: this.props.delay}}
+					>
+						<i className={this.props.iconClass}/>
+					</Tween>
+					<Tween
+					  key={2}
+					  animation={{x: -30, type: 'from', ease: 'easeOutQuart', opacity: 0, delay: this.props.delay + 100}}
+					>
+						<h3>{this.props.title}</h3>
+					</Tween>
+				</ScrollOverPack>
 				<ScrollOverPack
 					playScale="10vh"
+					component="ul"
 				>
-					<QueueAnim component="ul" key='queueAnim'>
-						{skills}
-					</QueueAnim>
+					{skills}
 				</ScrollOverPack>
-			</li>
+		</li>
 		)
 	}
 }

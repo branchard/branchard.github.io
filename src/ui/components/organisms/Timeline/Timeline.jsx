@@ -8,6 +8,7 @@ import {Card, CardImg, CardText, CardBlock, CardHeader,
 //import SkillCard from "../../molecules/SkillCard";
 import {OverPack as ScrollOverPack} from "rc-scroll-anim";
 import QueueAnim from 'rc-queue-anim';
+import Tween from 'rc-tween-one';
 
 function guidGenerator() {
     var S4 = function() {
@@ -47,6 +48,7 @@ class Timeline extends Component {
 			//marginHeight = 80;
 		}
 
+		// console.log("defineContainerHeight:", totalHeight);
 		this.setState({
 			timelineHeight: totalHeight
 		});
@@ -153,9 +155,18 @@ class Timeline extends Component {
 
 	render(){
 		return(
-			<Row className="timeline" tag="ul" style={{height: `${this.state.timelineHeight}px`}}>
-				{this.renderCards()}
-			</Row>
+			<ScrollOverPack
+				playScale="10vh"
+			>
+				<Tween
+				  key={1}
+				  animation={{x: -30, type: 'from', ease: 'easeOutQuart', opacity: 0, onStart: this.defineContainerHeight, onComplete: this.defineContainerHeight}}
+				>
+					<Row className="timeline" tag="ul" style={{height: `${this.state.timelineHeight}px`}}>
+						{this.renderCards()}
+					</Row>
+				</Tween>
+			</ScrollOverPack>
 		)
 	}
 }

@@ -4,6 +4,7 @@ import {Container, Row, Col} from 'reactstrap';
 
 import {OverPack as ScrollOverPack} from "rc-scroll-anim";
 import QueueAnim from 'rc-queue-anim';
+import Tween from 'rc-tween-one';
 
 class Section extends Component {
 	constructor(props){
@@ -18,9 +19,14 @@ class Section extends Component {
 		let subTitleElm;
 		if(subTitle){
 			subTitleElm = (
-				<Row key="b" className="subtitle-row">
-					<p className="col-12 text-center ">{subTitle}</p>
-				</Row>
+				<Tween
+				  key="2"
+				  animation={{ x: -30, type: 'from', ease: 'easeOutQuart', opacity: 0, delay: 100 }}
+				>
+					<Row className="subtitle-row">
+						<p className="col-12 text-center ">{subTitle}</p>
+					</Row>
+				</Tween>
 			);
 		}
 
@@ -30,14 +36,17 @@ class Section extends Component {
 					<Container style={style}>
 						<div className="titles">
 							<ScrollOverPack
-								playScale="5vh"
+								playScale="10vh"
 							>
-								<QueueAnim key='queueAnim' interval={25}>
-									<Row key="a" className="title-row">
+								<Tween
+						          key="1"
+						          animation={{x: 30, type: 'from', ease: 'easeOutQuart', opacity: 0}}
+						        >
+									<Row className="title-row">
 												<h2 className="col-12 text-center ">{title}</h2>
 									</Row>
-									{subTitleElm}
-								</QueueAnim>
+								</Tween>
+								{subTitleElm}
 							</ScrollOverPack>
 						</div>
 						{children}
