@@ -47,6 +47,7 @@
     "react-particles-js": "^1.5.0",
     "react-scroll": "^1.5.4",
     "react-transition-group": "^1.2.0",
+    "react-typist": "git+https://github.com/branchard/react-typist.git",
     "reactstrap": "^4.8.0"
   }
 }
