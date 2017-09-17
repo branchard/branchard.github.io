@@ -32,11 +32,12 @@ module.exports = function(env){
 	            drop_console: true
        		}
 	    }));
-
-		pluginsList.push(new HtmlWebpackPlugin({
-			hash: true,
-			template: 'src/template.html'
-		}));
+		if(!isStats){
+			pluginsList.push(new HtmlWebpackPlugin({
+				hash: true,
+				template: 'src/template.html'
+			}));
+		}
 	}
 
 	// make use list for css/scss modules
@@ -67,7 +68,7 @@ module.exports = function(env){
 	    output: {
 	        path: outputDir,
 	        publicPath: '/',
-	        filename: `build/bundle.js`
+	        filename: `${isStats ? "log" : "build"}/bundle.js`
 	    },
 	    resolve: {
 	        extensions: ['.js', '.jsx']
