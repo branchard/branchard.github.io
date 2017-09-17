@@ -1,21 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import {guidGenerator} from "../../../../utils";
 import {Container, Row, Col} from 'reactstrap';
 import {Card, CardImg, CardText, CardBlock, CardHeader,
 	CardTitle, CardSubtitle, Button, Badge } from 'reactstrap';
 
-//import SkillCard from "../../molecules/SkillCard";
 import {OverPack as ScrollOverPack} from "rc-scroll-anim";
-import QueueAnim from 'rc-queue-anim';
 import Tween from 'rc-tween-one';
-
-function guidGenerator() {
-    var S4 = function() {
-       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-    };
-    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-} // TODO move in "utils" module
 
 class Timeline extends Component {
 
