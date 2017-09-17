@@ -21,8 +21,16 @@ module.exports = function(env){
 	if (isProduction) {
 	    pluginsList.push(new webpack.optimize.UglifyJsPlugin({
 	        output: {
+				// remove comments
 	            comments: false
-	        }
+	        },
+			compress: {
+	         	// remove warnings
+	            warnings: false,
+
+	         	// Drop console statements
+	            drop_console: true
+       		}
 	    }));
 
 		pluginsList.push(new HtmlWebpackPlugin({
