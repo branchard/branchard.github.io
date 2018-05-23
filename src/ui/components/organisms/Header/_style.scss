@@ -36,6 +36,9 @@
 	.centered-container {
 		display: table-cell;
 		vertical-align: middle;
+		
+		// pass mouse events to the particles canvas
+		pointer-events: none;
 
 		.inner {
 			width: 20rem;
